@@ -1,3 +1,6 @@
+const Sentry = require('@sentry/node');
+Sentry.init({ dsn: 'https://53dd71d60e9548b2bf22b5d6339fcda5@o375177.ingest.sentry.io/5194222' });
+
 require('dotenv').config();
 const express  = require('express');
 // const fs       = require('fs');
