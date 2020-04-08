@@ -8,7 +8,6 @@ const print   = require('./print');
 //  GET
 // 
 routes.get('/cupons', async (req, res) => {
-    print()
     return res.json({})
 }); 
 
@@ -18,7 +17,7 @@ routes.get('/cupons', async (req, res) => {
 // 
 routes.post('/cupons', async (req, res) => {
     // const { ligasEventos, aposta, usuario, observacao, url, hash } = req.body;
-    console.log(req.body)
+    print()
     // const data = await ligasEventos.map( item => [
     //     { text: `\n[ ${item.nome_liga} ]`.substring(0, 42), align:"LEFT", width: 1},
     //     { text: `\n${item.times}`, align:"LEFT", width: 0.99 },
