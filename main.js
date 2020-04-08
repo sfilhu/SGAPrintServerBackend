@@ -15,17 +15,17 @@ const httpsOpt = {
     key  : fs.readFileSync(path.join(__dirname,'ssl', 'key.pem'))
 }
 
-  app
+app
   .use(cors())
   .use(express.json())
-  .use(express.urlencoded({ extended: true }))
-  .use(morgan('dev'))
-  .use( (req, res, next) => {
-      res.header('Access-Control-Allow-Origin', '*')
-      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-      next();
-    })
-  .use(routes)
+.use(express.urlencoded({ extended: true }))
+.use(morgan('dev'))
+.use( (req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+})
+.use(routes)
   
   const server = require('https').Server(httpsOpt, app);
   server.listen(process.env.PORT || 3001)
