@@ -46,12 +46,11 @@ routes.post('/cupons', async (req, res) => {
     // print(cupom)
    
     const SerialPort = require('serialport')
-
-    SerialPort.list().then( (ports) => {
+    let portas = [];
+    await SerialPort.list().then( (ports) => {
         // console.log(ports)
         // const port = ports.filter(item => item.manufacturer != undefined)
-        // console.log(port)
-        return res.json({ ports })
+        portas = ports
         // if(port.length != 0){
         //     const printSerialPort = require('./print-serialport');
         //     const { path, comName } = port[0];
@@ -66,7 +65,12 @@ routes.post('/cupons', async (req, res) => {
         console.log(err)
     })
 
-
+    // console.log(portas)
+    return res.json({ 
+        status: 200,
+        ports: portas,
+        data: req.body  
+    })
     // listCupons.push(cupom);
     // console.log(print())
     
