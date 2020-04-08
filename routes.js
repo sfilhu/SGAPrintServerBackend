@@ -3,12 +3,13 @@ const routes  = require('express').Router();
 const uniqid  = require('uniqid');
 const print   = require('./print');
 const formatDate = require('./print/format-date.js');
+const ip = require('ip').address();
 
 // 
 //  GET
 // 
 routes.get('/cupons', async (req, res) => {
-    return res.json({})
+    return res.json({ ip })
 }); 
 
 
