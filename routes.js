@@ -43,10 +43,31 @@ routes.post('/cupons', async (req, res) => {
         createAt: Date()
     }
     
-    print(cupom);
+    // print(cupom)
+   
+    const SerialPort = require('serialport')
+
+    SerialPort.list().then( (ports) => {
+        // console.log(ports)
+        // const port = ports.filter(item => item.manufacturer != undefined)
+        // console.log(port)
+        return res.json({ ports })
+        // if(port.length != 0){
+        //     const printSerialPort = require('./print-serialport');
+        //     const { path, comName } = port[0];
+        //     const osPort = process.platform === 'darwin' ? comName : path
+        //     await printSerialPort(list, osPort)
+        // } else {
+        //     const printUSB = require('./print-usb');
+        //     await printUSB(list);
+        //     return true
+        // }
+    })
+
+
     // listCupons.push(cupom);
     // console.log(print())
-    return res.json(req.body)
+    
 });
 
 
