@@ -10,7 +10,7 @@ SGA Print Server
 
 <hr>
 
-                                     |
+                                     
 
 ## Dependencies
 
