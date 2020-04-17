@@ -27,18 +27,17 @@ SGA Print Server
 **NODE/NPM**<br />
 1. Run `sudo apt install curl`<br />
 2. Run `curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -`.<br />
-3. Run `sudo apt install nodejs`.<br /><br />
+3. Run `sudo apt install nodejs`.<br />
 
 **NVM**<br />
 1. Run `curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh -o install_nvm.sh`<br />
 2. Run `bash install_nvm.sh`<br />
 3. Run `source ~/.profile`<br />
 4. Run `nvm install 8.13.0`<br />
-5. Run `nvm alias default 8.13.0`<br /><br />
-<br />
+5. Run `nvm alias default 8.13.0`<br />
 
 **Visual Code (optional)**<br />
-`sudo snap install --classic code`<br /><br />
+`sudo snap install --classic code`<br />
 
 
 ## Getting started
