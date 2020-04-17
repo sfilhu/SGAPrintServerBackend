@@ -2,23 +2,14 @@ const escpos  = require('escpos');
 escpos.USB    = require('escpos-usb');
 const device  = new escpos.USB()
 
-if(device) {
-    console.log(1)
-} else {
-    console.log(2)
-}
-
-
 const options = { encoding: "GB18030" /* default */ }
 const printer = new escpos.Printer(device, options);
-
-console.log(escpos)
 
 const today = require('./format-date')
 
 const printUSB = (list) => {
     const { data, usuario, aposta, observacao, url, lengthEvents, hash } = list;
-    console.log(data.length)
+    
     function removerAcentos( newStringComAcento ) {
         var string = newStringComAcento;
           var mapaAcentosHex 	= {

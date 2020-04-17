@@ -2,15 +2,13 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
+  "author": "Sérgio José Ramos Filho",
+  "license": "ISC",
   "main": "main.js",
   "scripts": {
     "start": "node main.js"
   },
-  "keywords": [],
-  "author": "Sérgio José Ramos Filho",
-  "license": "ISC",
   "dependencies": {
-    "@sentry/node": "^5.15.4",
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "usb": "^1.6.3",
