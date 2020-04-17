@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img src="icon.png" alt="GoBarber" width="90">
+  <img src="icon.png" alt="GoBarber" width="200">
 <br>
 <br>
 SGA Print Server
