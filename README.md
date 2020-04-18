@@ -12,10 +12,7 @@ SGA Print Server
 
                                      
 
-## Dependencies
-
-- **NodeJS** **8.13.0**
-- **NPM**
+## Drivers USB
 - For windows [Zadig](https://zadig.akeo.ie/)
 - For linux [Cups](https://localhost:631/)
 
@@ -42,9 +39,9 @@ SGA Print Server
 
 ## Getting started
 
-1. Clone this repository;<br />
+1. Clone this repository<br />
 `git clone https://github.com/sfilhu/SGAPrintServerBeckend.git`<br />
-2. `cd SGAPrintServerBeckend`;<br />
-3. Run `npm i` to install project dependencies.<br />
-4. Run `npm rebuild`.<br />
-4. Run `npm run start`.<br />
+2. `cd SGAPrintServerBeckend`<br />
+3. Run `npm i` to install project dependencies<br />
+4. Run `npm rebuild`<br />
+4. Run `npm run start`<br />
