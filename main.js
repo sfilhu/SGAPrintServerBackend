@@ -25,4 +25,7 @@ app
 .use(routes)
   
 const server = require('https').Server(httpsOpt, app);
-server.listen(3001)
+server.listen(3001, function(err) {
+  if(err) throw err;
+  console.log('Server connected!')
+})
