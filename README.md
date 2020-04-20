@@ -25,7 +25,7 @@ SGA Print Server
 
 **NODE/NPM**<br />
 1. Run `sudo apt install curl`<br />
-2. Run `curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -`.<br />
+2. Run `curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -`<br />
 3. Run `sudo apt install nodejs`.<br />
 
 **NVM**<br />
