@@ -15,6 +15,8 @@ SGA Print Server
 ## Drivers USB
 - For windows [Zadig](https://zadig.akeo.ie/)
 - For linux [Cups](https://localhost:631/)
+- Run with admin run `sudo su` in terminal
+
 
 ## Install Dependencies
 
@@ -39,9 +41,13 @@ SGA Print Server
 
 ## Getting started
 
+PS: It's very important run with admin! Run `sudo su` in terminal
+
 1. Clone this repository<br />
+`sudo apt-get install build-essential libudev-dev`
 `git clone https://github.com/sfilhu/SGAPrintServerBeckend.git`<br />
 2. `cd SGAPrintServerBeckend`<br />
-3. Run `npm i` to install project dependencies<br />
-4. Run `npm rebuild`<br />
-4. Run `npm run start`<br />
+
+3. Run `sudo npm i` to install project dependencies<br />
+4. Run `sudo npm rebuild`<br />
+4. Run `sudo npm run start`<br />
