@@ -26,7 +26,7 @@ SGA Print Server
 **NODE/NPM**<br />
 1. Run `sudo apt install curl`<br />
 2. Run `curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -`<br />
-3. Run `sudo apt install nodejs`.<br />
+3. Run `sudo apt install nodejs`<br />
 
 **NVM**<br />
 1. Run `curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh -o install_nvm.sh`<br />
@@ -44,7 +44,7 @@ SGA Print Server
 PS: It's very important run with admin! Run `sudo su` in terminal
 
 1. Clone this repository<br />
-`sudo apt-get install build-essential libudev-dev`
+`sudo apt-get install build-essential libudev-dev`<br />
 `git clone https://github.com/sfilhu/SGAPrintServerBeckend.git`<br />
 2. `cd SGAPrintServerBeckend`<br />
 
