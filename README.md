@@ -43,8 +43,10 @@ SGA Print Server
 
 PS: It's very important run with admin! Run `sudo su` in terminal
 
-1. Clone this repository<br />
+### Linux (Important!)
 `sudo apt-get install build-essential libudev-dev`<br />
+
+1. Clone this repository<br />
 `git clone https://github.com/sfilhu/SGAPrintServerBeckend.git`<br />
 2. `cd SGAPrintServerBeckend`<br />
 
