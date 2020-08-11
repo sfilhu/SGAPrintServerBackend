@@ -9,7 +9,9 @@ const today = require('./format-date')
 
 const printUSB = (list) => {
     const { data, usuario, aposta, observacao, url, lengthEvents, hash } = list;
-    
+    const code = `${aposta.id}@${hash.slice(0.10)}`
+    const qrcode = list.qrcode;
+
     function removerAcentos( newStringComAcento ) {
         var string = newStringComAcento;
           var mapaAcentosHex 	= {
@@ -40,44 +42,83 @@ const printUSB = (list) => {
 
     device.open( function(erro) {
         if(!erro) {
-            printer
-            .size(2)
-            .align('LT')
-            .font('A')
-            .text(`${removerAcentos(usuario.nome_banca)}`)
-            .text(today())
-            .text(`${removerAcentos(usuario.nome_cidade)}`)
-            .align('LT')
-            .text(`Codigo.: ${aposta.id}`)
-            .text(`Cliente: ${removerAcentos(aposta.apostador)}`)
-            .text(`Agente.: ${removerAcentos(usuario.nome_usuario)}`)
-            .text(`Fone...: ${usuario.telefone}`)
-            .text(`Cel....: ${usuario.celular}`)
-            .text(`Tipo...: ${ data.length == 1 ? 'Simples' : 'Casadinha' } ${ aposta.impresso == 1 ? ' - 2º via' : '' } ${ aposta.origem == 7 ? ' - Validacao' : '' }` )
-            .text('-----------------------------')
-            .tableCustom(data)
-            .align('LT')
-            .text(`Qtd Eventos.....: ${lengthEvents}`)
-            .text(`Multiplicador...: ${aposta.multiplicador}`)
-            .text(`Valor Apostado..: R$ ${aposta.valor}`)
-            .text(`Retorno Possivel: R$ ${aposta.valor_premio}`)
-            .text('-----------------------------')
-            .text(' ')
-            .align('LT')
-            .text(removerAcentos(observacao).replace(/(\r\n|\n|\r)/gm, "").split('<br />'))
-            .text(' ')
-            .text('AS REGRAS ESTAO DISPONIVEIS NO SITE:')
-            .text(url)
-            .text(' ')
-            .text(' ')
-            .text(hash)
-            .text(' ')
-            .text(' ')
-            .align('CT')
-            .qrimage('', function(){
-                this.cut();
-                this.close();
-            });
+            if (qrcode == 1) {
+                printer
+                .size(2)
+                .align('LT')
+                .font('A')
+                .text(`${removerAcentos(usuario.nome_banca)}`)
+                .text(today())
+                .text(`${removerAcentos(usuario.nome_cidade)}`)
+                .align('LT')
+                .text(`Codigo.: ${aposta.id}`)
+                .text(`Cliente: ${removerAcentos(aposta.apostador)}`)
+                .text(`Agente.: ${removerAcentos(usuario.nome_usuario)}`)
+                .text(`Fone...: ${usuario.telefone}`)
+                .text(`Cel....: ${usuario.celular}`)
+                .text(`Tipo...: ${ data.length == 1 ? 'Simples' : 'Casadinha' } ${ aposta.impresso == 1 ? ' - 2º via' : '' } ${ aposta.origem == 7 ? ' - Validacao' : '' }` )
+                .text('-----------------------------')
+                .tableCustom(data)
+                .align('LT')
+                .text(`Qtd Eventos.....: ${lengthEvents}`)
+                .text(`Multiplicador...: ${aposta.multiplicador}`)
+                .text(`Valor Apostado..: R$ ${aposta.valor}`)
+                .text(`Retorno Possivel: R$ ${aposta.valor_premio}`)
+                .text('-----------------------------')
+                .text(' ')
+                .align('LT')
+                .text(removerAcentos(observacao).replace(/(\r\n|\n|\r)/gm, "").split('<br />'))
+                .text(' ')
+                .text('AS REGRAS ESTAO DISPONIVEIS NO SITE:')
+                .text(url)
+                .text(' ')
+                .text(' ')
+                .text(hash)
+                .qrimage(code, function(){
+	              this.cut();
+	              this.close();
+                })
+            } else {
+                printer
+                .size(2)
+                .align('LT')
+                .font('A')
+                .text(`${removerAcentos(usuario.nome_banca)}`)
+                .text(today())
+                .text(`${removerAcentos(usuario.nome_cidade)}`)
+                .align('LT')
+                .text(`Codigo.: ${aposta.id}`)
+                .text(`Cliente: ${removerAcentos(aposta.apostador)}`)
+                .text(`Agente.: ${removerAcentos(usuario.nome_usuario)}`)
+                .text(`Fone...: ${usuario.telefone}`)
+                .text(`Cel....: ${usuario.celular}`)
+                .text(`Tipo...: ${ data.length == 1 ? 'Simples' : 'Casadinha' } ${ aposta.impresso == 1 ? ' - 2º via' : '' } ${ aposta.origem == 7 ? ' - Validacao' : '' }` )
+                .text('-----------------------------')
+                .tableCustom(data)
+                .align('LT')
+                .text(`Qtd Eventos.....: ${lengthEvents}`)
+                .text(`Multiplicador...: ${aposta.multiplicador}`)
+                .text(`Valor Apostado..: R$ ${aposta.valor}`)
+                .text(`Retorno Possivel: R$ ${aposta.valor_premio}`)
+                .text('-----------------------------')
+                .text(' ')
+                .align('LT')
+                .text(removerAcentos(observacao).replace(/(\r\n|\n|\r)/gm, "").split('<br />'))
+                .text(' ')
+                .text('AS REGRAS ESTAO DISPONIVEIS NO SITE:')
+                .text(url)
+                .text(' ')
+                .text(' ')
+                .text(hash)
+                .text('')
+                .text('')
+                .text('')
+                .text('')
+                .cut()
+                .close();
+            }
+            
+            
         } else {
             console.log(erro)
         }
